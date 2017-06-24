@@ -29,8 +29,8 @@ Tinytest.add('EthTools.formatBalance', function (test) {
 
     // default to ether
     if(Meteor.isClient)
-        EthTools.setUnit('ether');
-    test.equal(EthTools.formatBalance('1000000000000000000', '0,0.0[00] unit'), "1.0 ether");
+        EthTools.setUnit('nuko');
+    test.equal(EthTools.formatBalance('1000000000000000000', '0,0.0[00] unit'), "1.0 nuko");
 
     // default to finney
     if(Meteor.isClient) {
@@ -80,6 +80,6 @@ Tinytest.add('EthTools.formatBalance', function (test) {
 
     // reset
     if(Meteor.isClient)
-        EthTools.setUnit('ether');
+        EthTools.setUnit('nuko');
 
 });

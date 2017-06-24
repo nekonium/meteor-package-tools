@@ -1,8 +1,8 @@
 Package.describe({
-  name: 'ethereum:tools',
+  name: 'nekonium:tools',
   summary: 'Helper functions for dapps',
   version: '0.7.0',
-  git: 'http://github.com/ethereum/meteor-package-tools'
+  git: 'http://github.com/nekonium/meteor-package-tools'
 });
 
 Package.onUse(function(api) {
@@ -18,7 +18,7 @@ Package.onUse(function(api) {
   //api.use('numeral:numeral@1.5.3', ['client', 'server']);
   api.use('3stack:bignumber@2.0.0', 'client');
 
-  api.use('ethereum:web3@0.15.1', ['client', 'server']);
+  api.use('nekonium:web3@0.20.2', ['client', 'server']);
   api.use('frozeman:persistent-minimongo@0.1.8', 'client');
   api.use('frozeman:storage@0.1.8', 'client');
 
@@ -33,7 +33,7 @@ Package.onUse(function(api) {
 
 Package.onTest(function(api) {
   api.use('tinytest');
-  api.use('ethereum:tools');
+  api.use('nekonium:tools');
   api.addFiles('ethtools-tests.js', ['client', 'server']);
 });
 

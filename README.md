@@ -1,4 +1,4 @@
-# Ethereum tools
+# Nekonium tools
 
 A set of helper functions for ethereum dapps.
 
@@ -8,7 +8,7 @@ See here for a [demo of the template helpers](http://localhost:4000/#tools).
 
 You can either add it as a Meteor package using:
 
-    $ Meteor add ethereum:tools
+    $ Meteor add nekonium:tools
 
 or add link to the `ethtools.js` in your HTML.
 

@@ -63,7 +63,7 @@ var getUnit = function(unit){
         unit = LocalStore.get('dapp_etherUnit');
 
         if(!unit) {
-            unit = 'ether';
+            unit = 'nuko';
             LocalStore.set('dapp_etherUnit', unit);
         }
     }
@@ -89,10 +89,10 @@ if(isMeteorPackage) {
     /**
     Sets the default unit used by all EthTools functions, if no unit is provided.
 
-        EthTools.setUnit('ether')
+        EthTools.setUnit('nuko')
 
     @method setUnit
-    @param {String} unit the unit like 'ether', or 'eur'
+    @param {String} unit the unit like 'nuko', or 'eur'
     @param {Boolean}
     **/
     EthTools.setUnit = function(unit){
@@ -116,7 +116,7 @@ if(isMeteorPackage) {
         EthTools.getUnit()
 
     @method getUnit
-    @return {String} unit the unit like 'ether', or 'eur'
+    @return {String} unit the unit like 'nuko', or 'eur'
     **/
     EthTools.getUnit = function(){
         return LocalStore.get('dapp_etherUnit');
@@ -235,8 +235,8 @@ EthTools.formatBalance = function(number, format, unit){
     if(typeof EthTools.ticker !== 'undefined' && supportedCurrencies(unit)) {
         var ticker = EthTools.ticker.findOne(unit, {fields: {price: 1}});
 
-        // convert first to ether
-        number = web3.fromWei(number, 'ether');
+        // convert first to nuko
+        number = web3.fromWei(number, 'nuko');
 
         // then times the currency
         if(ticker) {
@@ -284,7 +284,7 @@ EthTools.toWei = function(number, unit){
         var ticker = EthTools.ticker.findOne(unit, {fields: {price: 1}});
 
         // convert first to ether
-        number = web3.toWei(number, 'ether');
+        number = web3.toWei(number, 'nuko');
 
         // then times the currency
         if(ticker) {
