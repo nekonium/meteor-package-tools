@@ -85,7 +85,7 @@ EthTools = {
 };
 
 if(isMeteorPackage) {
-
+    var web3=nekonium.web3;
     /**
     Sets the default unit used by all EthTools functions, if no unit is provided.
 
@@ -152,6 +152,7 @@ Formats a given number
 @return {String} The formated time
 **/
 EthTools.formatNumber = function(number, format){
+    var BigNumber=nekonium.BigNumber;    
     var length = optionalLength = 0;
     dependency.depend();
 
@@ -220,6 +221,8 @@ Formats a number of wei to a balance.
 @return {String} The formatted number
 **/
 EthTools.formatBalance = function(number, format, unit){
+    var web3=nekonium.web3;
+    var BigNumber=nekonium.BigNumber;    
     dependency.depend();
 
     if(!_.isFinite(number) && !(number instanceof BigNumber))
@@ -274,7 +277,9 @@ Formats any of the supported currency to ethereum wei.
 @return {String} unit
 **/
 EthTools.toWei = function(number, unit){
-
+    var web3=nekonium.web3;
+    var BigNumber=nekonium.BigNumber;    
+    
     if(!_.isFinite(number) && !(number instanceof BigNumber))
         return number;
 
