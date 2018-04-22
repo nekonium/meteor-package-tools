@@ -1,7 +1,7 @@
 Package.describe({
   name: 'nekonium:tools',
   summary: 'Helper functions for dapps',
-  version: '0.7.1',
+  version: '0.7.3',
   git: 'http://github.com/nekonium/meteor-package-tools'
 });
 

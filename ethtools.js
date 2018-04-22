@@ -167,15 +167,27 @@ EthTools.formatNumber = function(number, format){
     if(_.isFinite(number) && !_.isObject(number))
         number = new BigNumber(number);
 
-    options = (EthTools.lang === 'en')
-        ?   { decimalSeparator: '.',
-              groupSeparator: ',',
-              groupSize: 3
-            }
-        :   { decimalSeparator: ',',
-              groupSeparator: ' ',
-              groupSize: 3
-            };
+    var options={
+        decimalSeparator: ',',
+        groupSeparator: ' ',
+        groupSize: 3
+        };
+    switch(EthTools.lang){
+    case "en":
+    case "ja":
+    case "ko":
+    case "zh":
+        options["decimalSeparator"]='.';
+        options["groupSeparator"]=',';
+        break;
+    case "de":
+    case "es":
+        options["decimalSeparator"]=',';
+        options["groupSeparator"]='.';
+        break;
+    default:
+        break;
+    }
     BigNumber.config({ FORMAT: options });
 
 
