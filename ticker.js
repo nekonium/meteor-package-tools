@@ -8,10 +8,10 @@ EthTools.ticker.start = function(options){
     if (!options.currencies){
         options.currencies = ['BTC'];
     }
-    for(var i=0;i<length(options.currencies);i++){
+    for(var i=0;i<options.currencies.length;i++){
         var name = options.currencies[i].toLowerCase();
         EthTools.ticker.upsert(name, {$set: {
-            price: String(price),
+            price: '0',
             timestamp: null
         }});        
     }
