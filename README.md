@@ -1,4 +1,17 @@
 # Nekonium tools
+Forked from Ethereum tools.
+
+Difference from Ethereum tools.
+
+- Update web3 library to nekonium web3.
+- Change default unit to nuko.
+- Change the namespace of web3 to nekonium/web3. (0.7.3)
+- Change Collection name to nekonium_ticker_x (0.3.4)
+- LocalStore name to dapp_nekoniumUnit (0.3.4)
+- delete ticker list. (0.3.4)
+
+
+# Ethereum tools
 
 A set of helper functions for ethereum dapps.
 
@@ -8,7 +21,7 @@ See here for a [demo of the template helpers](http://localhost:4000/#tools).
 
 You can either add it as a Meteor package using:
 
-    $ Meteor add nekonium:tools
+    $ Meteor add ethereum:tools
 
 or add link to the `ethtools.js` in your HTML.
 

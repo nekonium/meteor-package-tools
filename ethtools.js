@@ -44,11 +44,8 @@ Check for supported currencies
 @return {String}
 */
 var supportedCurrencies = function(unit){
-    return (unit === 'usd' ||
-           unit === 'eur' ||
-           unit === 'btc' ||
-           unit === 'gbp' ||
-           unit === 'brl');
+    return false;
+//    return (unit === 'usd' || unit === 'eur' || unit === 'btc');
 };
 
 /**
@@ -60,11 +57,11 @@ Gets the ether unit if not set from localstorage
 */
 var getUnit = function(unit){
     if(!_.isString(unit)) {
-        unit = LocalStore.get('dapp_etherUnit');
+        unit = LocalStore.get('dapp_nekoniumUnit');
 
         if(!unit) {
             unit = 'nuko';
-            LocalStore.set('dapp_etherUnit', unit);
+            LocalStore.set('dapp_nekoniumUnit', unit);
         }
     }
 
@@ -97,12 +94,12 @@ if(isMeteorPackage) {
     **/
     EthTools.setUnit = function(unit){
         if(supportedCurrencies(unit)) {
-            LocalStore.set('dapp_etherUnit', unit);
+            LocalStore.set('dapp_nekoniumUnit', unit);
             return true;
         } else {
             try {
                 web3.toWei(1, unit);
-                LocalStore.set('dapp_etherUnit', unit);
+                LocalStore.set('dapp_nekoniumUnit', unit);
                 return true;
             } catch(e) {
                 return false;
@@ -119,7 +116,7 @@ if(isMeteorPackage) {
     @return {String} unit the unit like 'nuko', or 'eur'
     **/
     EthTools.getUnit = function(){
-        return LocalStore.get('dapp_etherUnit');
+        return LocalStore.get('dapp_nekoniumUnit');
     };
 }
 
